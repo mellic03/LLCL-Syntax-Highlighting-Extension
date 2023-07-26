@@ -1,0 +1,59 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "low level C-like language",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.llcl",
+                    "match": "fn|endfn|if|endif|wh|endwh|return|#define"
+                },
+                {
+                    "name": "storage.type",
+                    "match": "u00|i32|i64|u08|u32|u64"
+                },
+                {
+                    "name": "keyword.other",
+                    "match": "(?<=#define\\s)([A-za-z0-9_-]*)"
+                },
+                {
+                    "name": "keyword.other",
+                    "match": "MEMBLOCK"
+                },
+                {
+                    "name": "constant.character",
+                    "match": "true|false"
+                },
+                {
+                    "name": "comment",
+                    "begin": "//",
+                    "end": "\n"
+                },
+                {
+                    "name": "support.function.llcl",
+                    "match": "\\s([A-za-z0-9_-]*)([(])"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.llcl",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.llcl",
+                    "match": "\\\\."
+                }
+            ]
+        }
+    },
+    "scopeName": "source.llcl"
+}

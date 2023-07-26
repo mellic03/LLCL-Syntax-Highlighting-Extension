@@ -1,0 +1,42 @@
+{
+    "name": "llcl",
+    "displayName": "llcl-language-extension",
+    "description": "syntax highlighting for low level c-like language",
+    "publisher": "mellic03",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "llcl",
+                "icon": {
+                    "light": "./img/LLCL_logo.png",
+                    "dark": "./img/LLCL_logo.png"
+                },
+                "aliases": [
+                    "low level C-like language",
+                    "llcl"
+                ],
+                "extensions": [
+                    "llcl",
+                    "LLCL",
+                    "llcll",
+                    "LLCLL"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "llcl",
+                "scopeName": "source.llcl",
+                "path": "./syntaxes/llcl.tmLanguage.json"
+            }
+        ]
+    }
+}
